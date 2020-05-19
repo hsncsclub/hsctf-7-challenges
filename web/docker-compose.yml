@@ -1,0 +1,6 @@
+version: "3"
+services:
+  blurry-eyes:
+    build: ./blurry-eyes
+    ports:
+      - 127.0.0.1:8001:80
