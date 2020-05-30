@@ -1,0 +1,6 @@
+version: "3"
+services:
+  pwnagotchi:
+    build: ./pwnagotchi
+    ports:
+      - 127.0.0.1:5002:9999
