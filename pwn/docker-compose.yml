@@ -12,3 +12,7 @@ services:
     build: ./got_it
     ports:
       - 127.0.0.1:5004:9999
+  studysim:
+    build: ./studysim
+    ports:
+      - 127.0.0.1:5005:9999
