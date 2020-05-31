@@ -1,0 +1,3 @@
+There's some acknowledgements over in flag.txt if you haven't seen that yet.
+
+flag{fl1gh7_0f_7h3_l1bc_func710n5_77e82515}

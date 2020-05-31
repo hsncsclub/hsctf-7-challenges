@@ -8,3 +8,7 @@ services:
     build: ./boredom
     ports:
       - 127.0.0.1:5003:9999
+  got_it:
+    build: ./got_it
+    ports:
+      - 127.0.0.1:5004:9999

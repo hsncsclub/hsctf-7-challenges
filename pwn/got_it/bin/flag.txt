@@ -1,0 +1,4 @@
+The actual flag is in acknowledgements.txt.
+
+Acknowledgements:
+@AC#4637 for dubious German
