@@ -4,3 +4,7 @@ services:
     build: ./pwnagotchi
     ports:
       - 127.0.0.1:5002:9999
+  boredom:
+    build: ./boredom
+    ports:
+      - 127.0.0.1:5003:9999
