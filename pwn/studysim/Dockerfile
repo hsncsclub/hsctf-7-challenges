@@ -1,14 +1,13 @@
 FROM ubuntu:20.04
 
 RUN apt-get update && apt-get -y dist-upgrade && \
-    apt-get install -y lib32z1 xinetd
+    apt-get install -y lib32z1 xinetd gcc
 
 RUN useradd -m ctf
 
 WORKDIR /home/ctf
 
-RUN cp -R /lib* /home/ctf && \
-    cp -R /usr/lib* /home/ctf
+RUN cp -R /usr/lib* /home/ctf
 
 RUN mkdir /home/ctf/dev && \
     mknod /home/ctf/dev/null c 1 3 && \
@@ -29,10 +28,12 @@ RUN echo "Blocked by ctf_xinetd" > /etc/banner_fail
 RUN chmod +x /start.sh
 
 COPY ./bin/ /home/ctf/
+
+RUN /home/ctf/compile.sh /home/ctf/studysim
+
 RUN chown -R root:ctf /home/ctf && \
     chmod -R 750 /home/ctf && \
-    chmod 740 /home/ctf/flag.txt && \
-    /home/ctf/compile.sh /home/ctf/studysim
+    chmod 740 /home/ctf/flag.txt
 
 CMD ["/start.sh"]
 
