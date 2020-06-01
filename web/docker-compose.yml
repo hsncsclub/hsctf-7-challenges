@@ -11,7 +11,7 @@ services:
   debt-simulator-login-backend:
     build: ./debt-and-login-server
     ports:
-      - 127.0.0.1:8011:80
+      - 127.0.0.1:8011:8080
   inspector-gadget:
     build: ./inspector-gadget
     ports:
@@ -28,4 +28,8 @@ services:
       - traffic-light-1004
   traffic-light-1004:
     build: ./traffic-light-w-internal
+  broken-tokens:
+    build: ./jwtchall
+    ports:
+      - 127.0.0.1:8005:8000
 

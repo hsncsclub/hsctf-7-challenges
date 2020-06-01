@@ -1,0 +1,29 @@
+body {
+	font-family: Roboto, Oxygen, sans-serif;
+}
+#content {
+	display: flex;
+	align-items: start;
+	flex-direction: column;
+	padding: 15px;
+}
+#login-form {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 5px;
+}
+#login-form input {
+	margin: 5px;
+}
+#header {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	border-bottom: solid lightgrey 2px;
+	margin-bottom: 10px;
+}
+header,
+a {
+	padding: 0 10px 5px;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<title>Web Portal Login</title>
+		<link rel="stylesheet" href="/static/style.css" />
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		/>
+	</head>
+	<body>
+		{% if logged_in %}
+		<nav id="header">
+			<form method="POST">
+				<input type="submit" name="action" value="Logout" class="btn btn-link" />
+			</form>
+		</nav>
+		<main id="content">
+			<div>Logged in as {{ "admin" if admin else "guest" }}</div>
+
+			{% if admin %}
+			<div id="flag">The flag is {{flag}}</div>
+			{% endif %}
+		</main>
+		{% else %}
+		<main id="content">
+			<header>Web Portal Login</header>
+			<form id="login-form" method="POST">
+				<input type="text" name="username" placeholder="Username" />
+				<input type="password" name="password" placeholder="Password" />
+				<input type="submit" name="action" value="Login" />
+			</form>
+			<a href="/publickey.pem">publickey.pem</a>
+		</main>
+		{% endif %}
+	</body>
+</html>
