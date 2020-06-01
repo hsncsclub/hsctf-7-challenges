@@ -1,5 +1,9 @@
 version: "3"
 services:
+  intro-to-netcat-2-electric-boogaloo:
+    build: ./intro-to-netcat-2-electric-boogaloo
+    ports:
+      - 5001:9999
   pwnagotchi:
     build: ./pwnagotchi
     ports:
