@@ -4,19 +4,23 @@ services:
     build: ./intro-to-netcat-2-electric-boogaloo
     ports:
       - 5001:9999
-  pwnagotchi:
-    build: ./pwnagotchi
-    ports:
-      - 5002:9999
   boredom:
     build: ./boredom
     ports:
-      - 5003:9999
+      - 5002:9999
   got_it:
     build: ./got_it
     ports:
       - 5004:9999
+  pwnagotchi:
+    build: ./pwnagotchi
+    ports:
+      - 5005:9999
+  trees1:
+    build: ./trees1
+    ports:
+      - 5006:9999
   studysim:
     build: ./studysim
     ports:
-      - 5005:9999
+      - 5007:9999
