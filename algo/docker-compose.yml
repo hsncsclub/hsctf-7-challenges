@@ -1,0 +1,6 @@
+version: "3"
+services:
+  traffic_lights_a:
+    build: ./traffic_lights_a
+    ports:
+      - 7001:9999
