@@ -1,13 +1,29 @@
 version: "3"
 services:
+  we-love-puppies: # forensics
+    build: ./we-love-puppies
+    ports:
+      - 127.0.0.1:8001:80
+  debt-simulator-frontend:
+    build: ./debt-simulator/frontend
+    ports:
+      - 127.0.0.1:8010:80
+  debt-simulator-login-backend:
+    build: ./debt-and-login-server
+    ports:
+      - 127.0.0.1:8011:80
+  inspector-gadget:
+    build: ./inspector-gadget
+    ports:
+      - 127.0.0.1:8004:80
   blurry-eyes:
     build: ./blurry-eyes
     ports:
-      - 127.0.0.1:8001:80
+      - 127.0.0.1:8002:80
   traffic-light-w:
     build: ./traffic-light-w
     ports:
-      - 127.0.0.1:8002:8080
+      - 127.0.0.1:8003:8080
     links:
       - traffic-light-1004
   traffic-light-1004:

@@ -21,7 +21,7 @@ function App() {
     } else if (runningTotal !== 0 && buttonText !== "Next Round") {
       setButtonText("Next Round");
     }
-  }); 
+  });
 
   const onClick = () => {
     const isGetCost = Math.random() > 0.4 ? true : false;
@@ -32,7 +32,7 @@ function App() {
       headers: { 'Content-type': 'application/x-www-form-urlencoded' }
     }
 
-    fetch("https://mighty-reef-57944.herokuapp.com/yolo_0000000000001", requestOptions)
+    fetch("https://debt-simulator-login-backend.hsctf.com/yolo_0000000000001", requestOptions)
     .then(res => res.json())
     .then(data => {
       data = data.response;
