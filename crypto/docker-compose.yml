@@ -1,0 +1,10 @@
+version: "3"
+services:
+  rand1:
+    build: ./rand1
+    ports:
+      - 6001:9999
+  rand2:
+    build: ./rand2
+    ports:
+      - 6002:9999
