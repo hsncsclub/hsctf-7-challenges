@@ -58,6 +58,8 @@ int read_flag(struct s* m) {
 }
 
 int main() {
+	setvbuf(stdin, NULL, _IONBF, 0);
+	setvbuf(stdout, NULL, _IONBF, 0);
     printf("welcome to my PGM creator!\ninput: ");
     static char buf[1024];
     struct s* m = s_init(buf, sizeof(buf));
