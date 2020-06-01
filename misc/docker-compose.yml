@@ -3,4 +3,4 @@ services:
   my-first-calculator:
     build: ./my-first-calculator
     ports:
-      - 127.0.0.1:7001:9999
+      - 7001:9999
