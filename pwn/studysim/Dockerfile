@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 
 RUN apt-get update && apt-get -y dist-upgrade && \
-    apt-get install -y lib32z1 xinetd gcc
+    apt-get install -y lib32z1 xinetd
 
 RUN useradd -m ctf
 
@@ -28,8 +28,6 @@ RUN echo "Blocked by ctf_xinetd" > /etc/banner_fail
 RUN chmod +x /start.sh
 
 COPY ./bin/ /home/ctf/
-
-RUN /home/ctf/compile.sh /home/ctf/studysim
 
 RUN chown -R root:ctf /home/ctf && \
     chmod -R 750 /home/ctf && \
