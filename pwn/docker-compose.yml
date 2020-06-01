@@ -28,3 +28,7 @@ services:
     build: ./trees2
     ports:
       - 5009:9999
+  shattered:
+    build: ./shattered
+    ports:
+      - 5010:9999
