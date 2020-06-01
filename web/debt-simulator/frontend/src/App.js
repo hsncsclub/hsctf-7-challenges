@@ -32,7 +32,7 @@ function App() {
       headers: { 'Content-type': 'application/x-www-form-urlencoded' }
     }
 
-    fetch("https://debt-simulator-login-backend.hsctf.com/yolo_0000000000001", requestOptions)
+    fetch("https://debt-simulator-login-backend.web.hsctf.com/yolo_0000000000001", requestOptions)
     .then(res => res.json())
     .then(data => {
       data = data.response;
