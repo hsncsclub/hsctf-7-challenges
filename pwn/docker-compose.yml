@@ -24,3 +24,7 @@ services:
     build: ./studysim
     ports:
       - 5007:9999
+  trees2:
+    build: ./trees2
+    ports:
+      - 5009:9999
