@@ -3,7 +3,7 @@ services:
   traffic-light-w:
     build: ./traffic-light-w
     ports:
-      - 127.0.0.1:8002:8080
+      - 8002:8080
     links:
       - traffic-light-1004
   traffic-light-1004:
