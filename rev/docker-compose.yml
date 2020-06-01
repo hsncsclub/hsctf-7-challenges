@@ -1,0 +1,6 @@
+version: "3"
+services:
+  too-much:
+    build: ./too-much
+    ports:
+      - 9001:9999
