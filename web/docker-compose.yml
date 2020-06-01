@@ -1,5 +1,9 @@
 version: "3"
 services:
+  blurry-eyes:
+    build: ./blurry-eyes
+    ports:
+      - 127.0.0.1:8001:80
   traffic-light-w:
     build: ./traffic-light-w
     ports:
