@@ -28,6 +28,7 @@ RUN echo "Blocked by ctf_xinetd" > /etc/banner_fail
 RUN chmod +x /start.sh
 
 COPY ./bin/ /home/ctf/
+COPY ./lib/ /home/ctf/
 
 RUN chown -R root:ctf /home/ctf && \
     chmod -R 750 /home/ctf && \
