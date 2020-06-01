@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+  background-color: #edf492;
+  width: 50%;
+  margin: 10vh auto;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 3px 5px 5px #555;
+}
+
+@media only screen and (max-width: 785px) {
+  .App {
+    width: 80%;
+    padding: 30px 20px 30px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .App {
+    width: 80%;
+    padding: 30px 5px 30px;
+  }
+}
