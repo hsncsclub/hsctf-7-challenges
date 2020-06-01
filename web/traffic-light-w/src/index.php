@@ -62,7 +62,7 @@
                 <td>1,004</td>
                 <td>True</td>
                 <td>traffic-light-1004</td>
-                <td>80</td>
+                <td>8080</td>
                 <td><a href="firmware_upload.php?light=1004"><button type="button" class="btn btn-primary btn-sm">Upload Firmware</button></a></td>
               </tr>
               <tr>

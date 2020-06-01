@@ -12,3 +12,5 @@ services:
       - traffic-light-1004
   traffic-light-1004:
     build: ./traffic-light-w-internal
+    ports:
+      - 127.0.0.1:8080:80
