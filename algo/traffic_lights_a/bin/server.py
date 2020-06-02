@@ -17,12 +17,13 @@ def handler(signum, frame):
 signal.signal(signal.SIGALRM, handler)
 
 for i in range(10):
-    print(f"Here's case {i+1}! Please wait a moment for a case to be generated...")
+    print("Please wait a moment for a case to be generated...")
     case = open(f"saved/case{i+1}/{random.choice(cases[i])}").read()
-    time.sleep(3)
-    signal.alarm(3)
+    time.sleep(5)
+    signal.alarm(5)
     answered.clear()
     send, expect = case.split("\n\n")
+    print(f"Here's case {i+1}!")
     print(send)
     s = input() + "\n"
     if s == expect:

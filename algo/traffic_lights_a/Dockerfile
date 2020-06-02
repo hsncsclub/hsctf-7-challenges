@@ -1,14 +1,15 @@
 FROM ubuntu:18.04
 
 RUN apt-get update && apt-get -y dist-upgrade && \
-    apt-get install -y lib32z1 xinetd
+    apt-get install -y lib32z1 xinetd python3.8
 
 RUN useradd -m ctf
 
 WORKDIR /home/ctf
 
 RUN cp -R /lib* /home/ctf && \
-    cp -R /usr/lib* /home/ctf
+    mkdir /home/ctf/usr && \
+    cp -R /usr/lib* /home/ctf/usr
 
 RUN mkdir /home/ctf/dev && \
     mknod /home/ctf/dev/null c 1 3 && \
@@ -20,7 +21,8 @@ RUN mkdir /home/ctf/dev && \
 RUN mkdir /home/ctf/bin && \
     cp /bin/sh /home/ctf/bin && \
     cp /bin/ls /home/ctf/bin && \
-    cp /bin/cat /home/ctf/bin
+    cp /bin/cat /home/ctf/bin && \
+    cp /usr/bin/python3.8 /home/ctf/bin
 
 COPY ./ctf.xinetd /etc/xinetd.d/ctf
 COPY ./start.sh /start.sh
@@ -29,7 +31,8 @@ RUN echo "Blocked by ctf_xinetd" > /etc/banner_fail
 RUN chmod +x /start.sh
 
 COPY ./bin/ /home/ctf/
-COPY ./saved/ /home/ctf/
+
+COPY ./saved/ /home/ctf/saved
 
 RUN chown -R root:ctf /home/ctf && \
     chmod -R 750 /home/ctf && \
