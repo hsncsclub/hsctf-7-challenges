@@ -3,4 +3,4 @@ services:
   traffic_lights_a:
     build: ./traffic_lights_a
     ports:
-      - 7001:9999
+      - 4001:9999
