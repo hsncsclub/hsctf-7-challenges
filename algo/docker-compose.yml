@@ -4,3 +4,8 @@ services:
     build: ./traffic_lights_a
     ports:
       - 4001:9999
+  HollyLeague:
+    build: ./HollyLeague
+    image: holly_league
+    ports:
+      - 4002:9999

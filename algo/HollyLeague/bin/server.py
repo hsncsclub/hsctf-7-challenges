@@ -19,8 +19,8 @@ signal.signal(signal.SIGALRM, handler)
 for i in range(15):
     print("Please wait a moment for a case to be generated...")
     case = open(f"saved/case{i+1}/{random.choice(cases[i])}").read()
-    time.sleep(5)
-    signal.alarm(5)
+    time.sleep(3)
+    signal.alarm(3)
     answered.clear()
     send, expect = case.split("\n\n")
     print(f"Here's case {i+1}!")
@@ -33,6 +33,6 @@ for i in range(15):
         print("No, you're wrong, get out!")
         sys.exit(0)
 
-print("Wow, you really know your flow!")
+print("Wow, you really know your matchings!")
 print("Take this flag and get the heck out.")
 print(open("flag.txt").read())
