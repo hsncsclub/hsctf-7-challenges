@@ -1,7 +1,6 @@
 import os
 import sys
 import random
-import time
 import signal
 from threading import Timer, Event
 
@@ -15,12 +14,13 @@ def handler(signum, frame):
         sys.exit(0)
 
 signal.signal(signal.SIGALRM, handler)
+signal.alarm(120)
+
+print("Welcome! Good luck :D")
+print("You have 120 seconds to solve all ten cases")
 
 for i in range(10):
-    print("Please wait a moment for a case to be generated...")
     case = open(f"saved/case{i+1}/{random.choice(cases[i])}").read()
-    time.sleep(5)
-    signal.alarm(5)
     answered.clear()
     send, expect = case.split("\n\n")
     print(f"Here's case {i+1}!")
