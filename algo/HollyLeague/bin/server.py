@@ -10,7 +10,7 @@ def handler(signum, frame):
     sys.exit(0)
 
 signal.signal(signal.SIGALRM, handler)
-signal.alarm(60)
+signal.alarm(120)
 
 for i in range(15):
     case = open(f"saved/case{i+1}/{random.choice(cases[i])}").read()
