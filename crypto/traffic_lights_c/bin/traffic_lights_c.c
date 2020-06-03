@@ -5,6 +5,8 @@
 #include <sys/types.h>
 #include <signal.h>
 #include <assert.h>
+#include <stddef.h>
+
 #define __uint128 unsigned __int128
 char pad1 = 0;
 __uint128 state = (__uint128) 0;
@@ -84,7 +86,7 @@ void print_state(__uint128 val) {
 
 int main() {
   char password[32], input[24], a;
-  unsigned long length;
+  size_t length;
   setup();
   printf("Please enter your password: ");
   read(0, password, 31);
@@ -99,14 +101,14 @@ int main() {
   puts("Just enter your (hex) byte values.");
   puts("Please enter the length (in bytes) of the text to be encoded.");
   fgets(input, 23, stdin);
-  length = strtoul(input, NULL, 10);
+  length = (size_t) strtoul(input, NULL, 10);
   if (length > 1000) {
     puts("That's a tad much, don't you think?");
     exit(0);
   }
   msg = calloc(length+1, 1);
   keystream = calloc(length+1, 1);
-  int i = 0;
+  unsigned int i = 0;
   puts("Now enter the hex of the bytes to be encoded.");
   while (i < length && read(0, input, 2) > 0) {
     msg[i] = (unsigned char) strtoul(input, &extra, 16);
