@@ -24,6 +24,10 @@ services:
     build: ./studysim
     ports:
       - 5007:9999
+  trees_alyx:
+    build: ./trees_alyx
+    ports:
+      - 5008:9999
   trees2:
     build: ./trees2
     ports:
