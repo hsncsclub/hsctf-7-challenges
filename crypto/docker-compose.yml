@@ -8,3 +8,7 @@ services:
     build: ./rand2
     ports:
       - 6002:9999
+  traffic_lights_c:
+    build: ./traffic_lights_c
+    ports:
+      - 6003:9999
